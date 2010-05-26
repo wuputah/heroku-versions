@@ -14,7 +14,7 @@
   </p>
 
   <pre>
-<strong><%= "ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE} patchlevel #{RUBY_PATCHLEVEL}) [#{RUBY_PLATFORM}]" %>
+<strong><%= defined?(RUBY_DESCRIPTION) ? RUBY_DESCRIPTION : "ruby #{RUBY_VERSION} (#{RUBY_RELEASE_DATE} patchlevel #{RUBY_PATCHLEVEL}) [#{RUBY_PLATFORM}]" %>
 <%= "rubygems #{Gem::VERSION}" %></strong>
 
 <strong>$ env</strong>
