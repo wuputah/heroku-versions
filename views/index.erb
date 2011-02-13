@@ -25,9 +25,7 @@
 <%= `gem list` %>
 
 <strong>$ dpkg -l</strong>
-<%=
-  `dpkg -l | grep ^ii`.split("\n").collect { |s| s.split(/  +/) }.collect { |pkg| "#{pkg[1]} (#{pkg[2]})" }.join("\n")
-%>
+<span style="color: red">InformationTooUsefulError</span>
   </pre>
 
 <p><a href="/evil">Nobody expects the Spanish Inquisition!</a></p>

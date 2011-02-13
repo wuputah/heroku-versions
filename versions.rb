@@ -7,6 +7,7 @@ enable :run
 get '/' do
   headers 'Cache-Control' => 'public, max-age=3600'
   ENV['DATABASE_URL'] = ENV['DATABASE_URL'].sub(/:(?!\/\/)[^@]*/, ':xxxxxxxxxxxxxxxxx')
+  ENV['SHARED_DATABASE_URL'] = ENV['SHARED_DATABASE_URL'].sub(/:(?!\/\/)[^@]*/, ':xxxxxxxxxxxxxxxxx')
   ENV['LAST_GIT_BY'] = 'your@email.address'
   erb :index
 end
