@@ -4,6 +4,10 @@ require 'erb'
 
 enable :run
 
+before do
+  @stack = ENV['STACK'] || 'cedar'
+end
+
 get '/' do
   headers 'Cache-Control' => 'public, max-age=3600'
   ENV['DATABASE_URL'] = ENV['DATABASE_URL'].sub(/:(?!\/\/)[^@]*/, ':xxxxxxxxxxxxxxxxx') if ENV['DATABASE_URL']
