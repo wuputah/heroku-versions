@@ -25,7 +25,9 @@
 <%= `gem list` %>
 
 <strong>$ dpkg -l</strong>
-<span style="color: red">InformationTooUsefulError</span>
+<% unless (dpkg = `dpkg -l | grep ^ii`.strip).empty? %><%=
+  dpkg.split("\n").collect { |s| s.split(/  +/) }.collect { |pkg| "#{pkg[1]} (#{pkg[2]})" }.join("\n")
+%><% else %><span style="color: red">InformationTooUsefulError</span><% end %>
   </pre>
 
 <p><a href="/evil">Nobody expects the Spanish Inquisition!</a></p>
