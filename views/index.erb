@@ -22,8 +22,10 @@
 <strong>$ env</strong>
 <%= ENV.collect { |k, v| "#{k}=#{v}" }.join("\n") %>
 
+
 <strong>$ gem list</strong>
-<%= `gem list` %>
+<%= `gem list`.strip %>
+
 
 <strong>$ dpkg -l</strong>
 <% unless (dpkg = `dpkg -l | grep ^ii`.strip).empty? %><%=
